@@ -1,0 +1,7 @@
+{
+  "name": "CulerClicker",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

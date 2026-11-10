@@ -1,0 +1,40 @@
+<ion-content class="shop-modal-content">
+  <div class="shop-grid-container">
+    
+    <!-- Título de la Tienda -->
+    <div class="title-container">
+      <h1><strong>TIENDA DE MEJORAS</strong></h1>
+    </div>
+
+    <!-- Lista de mejoras usando el bucle nativo @for moderno -->
+    <div class="cards-grid">
+      @for (item of items; track item.name) {
+        <div class="shop-card">
+          
+          <!-- Icono superior -->
+          <div class="card-icon">
+            <ion-icon [name]="item.icon || 'trophy'"></ion-icon>
+          </div>
+          
+          <!-- Información (Título, descripción y coste) -->
+          <div class="card-info">
+            <h2>{{ item.name }}</h2>
+            <p>{{ item.description }}</p>
+            <div class="card-cost">
+              <span>Coste:</span> <strong>{{ item.price }} ⚽</strong>
+            </div>
+          </div>
+
+          <!-- Botón de compra -->
+          <div class="card-action">
+            <ion-button (click)="buyItem(item)" expand="block" class="fcb-btn">
+              Comprar
+            </ion-button>
+          </div>
+
+        </div>
+      }
+    </div>
+
+  </div>
+</ion-content>

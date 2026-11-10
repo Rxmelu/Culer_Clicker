@@ -1,27 +1,287 @@
-#container {
+// ==========================================
+// PALETA DE COLORES FC BARCELONA & VARIABLES
+// ==========================================
+$fcb-blue: #004d98;
+$fcb-garnet: #a50044;
+$fcb-gold: #edbb00;
+$fcb-dark: #070b19;
+
+// Fondo de la pantalla principal con tu imagen "bgFCB" integrada y un filtro oscuro profesional
+.fcb-clicker-bg {
+  --background: linear-gradient(135deg, rgba(7, 11, 25, 0.85), rgba(10, 16, 38, 0.90)), 
+                url('../../assets/img/bgFCB.jpg') no-repeat center center / cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-grid {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+// Reseteo de estilos por defecto de ion-col
+ion-col {
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
   text-align: center;
+  padding: 4px;
+}
 
+// ==========================================
+// TÍTULO DE LA APLICACIÓN
+// ==========================================
+.title-row {
+  margin-top: 10px;
+  margin-bottom: 1.5rem;
+
+  .app-title {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: $fcb-gold;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.8),
+                0 0 12px $fcb-dark;
+    letter-spacing: 2px;
+    margin: 0;
+    border-bottom: 3px solid $fcb-gold;
+    display: inline-block;
+    padding-bottom: 4px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 4px;
+  }
+}
+
+// ==========================================
+// FILA SUPERIOR: TIENDA Y CONTADOR
+// ==========================================
+.header-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; 
+  margin-bottom: 2rem;
+
+  .header-badge {
+    background: linear-gradient(135deg, $fcb-blue, $fcb-garnet);
+    border: 2px solid $fcb-gold;
+    border-radius: 16px;
+    padding: 8px 16px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5),
+                0 0 10px rgba(237, 187, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 130px;
+    box-sizing: border-box;
+
+    .badge-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      color: $fcb-gold;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+
+    .badge-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      height: 30px;
+      color: #ffffff;
+      width: 100%; // Asegura que ocupe todo el ancho para un centrado perfecto
+    }
+  }
+
+// Estilo específico Tienda (Texto 100% centrado)
+  .shop-badge {
+    cursor: pointer;
+    transition: transform 0.15s ease, filter 0.15s ease;
+
+    &:hover {
+      transform: scale(1.05);
+      filter: brightness(1.2);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+
+    .badge-content {
+      display: flex;
+      align-items: center;
+      justify-content: center; // Centrado absoluto horizontal
+      text-align: center;
+      width: 100%;
+      height: 30px;
+    }
+
+    .badge-text {
+      font-size: 0.95rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  ion-icon {
+    font-size: 1.1rem;
+  }
+
+  .badge-text {
+    font-size: 0.95rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+}
+
+  .counter-badge {
+    .counter-number {
+      font-size: 1.3rem;
+      font-weight: 900;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+      font-family: 'Impact', 'Arial Black', sans-serif;
+    }
+  }
+
+// ==========================================
+// ZONA DEL CLICKER (ESCUDO FLOTANTE)
+// ==========================================
+.clicker-row {
+  min-height: 50vh;
+
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  .shield-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-width: 280px;
+      cursor: pointer;
+      animation: float-shield 3.5s ease-in-out infinite;
+  
+    &::before {
+      content: '';
+      position: absolute;
+      width: 80%;
+      height: 80%;
+      background: radial-gradient(circle, rgba(237, 187, 0, 0.35) 0%, rgba(0, 0, 0, 0) 70%);
+      border-radius: 50%;
+      z-index: 0;
+      animation: pulse-glow 3s infinite alternate ease-in-out;
+    }
+}
+
+.floating-text {
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 900;
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.9), 0 0 10px $fcb-blue;
+  pointer-events: none;
+  animation: floatUpAndFade 0.75s ease-out forwards;
+  z-index: 50;
+  user-select: none;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+@keyframes floatUpAndFade {
+  0% {
+    transform: translateY(0) scale(0.7);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-60px) scale(1.25);
+    opacity: 0;
+  }
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
+    #col_imagen, .shield-img {
+      position: relative;
+      z-index: 1;
+      width: 85%;
+      max-width: 240px;
+      height: auto;
+      cursor: pointer;
+      user-select: none;
+      -webkit-user-drag: none;
+      filter: drop-shadow(0 12px 25px rgba(0, 0, 0, 0.6));
+      transition: transform 0.08s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
-  color: #8c8c8c;
-
-  margin: 0;
+      &:active {
+        transform: scale(0.92) rotate(-2deg);
+        filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.8)) brightness(1.15);
+      }
+    }
+  }
 }
 
-#container a {
-  text-decoration: none;
+.building-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 240px;
+  margin: 0 auto;
+  // Animación propia mucho más suave y desincronizada respecto al escudo central
+  animation: float-building 5s ease-in-out infinite;
+
+  .building-img {
+    width: 100%;
+    max-width: 220px; // Imágenes más grandes como pediste
+    height: auto;
+    filter: drop-shadow(0 12px 25px rgba(0, 0, 0, 0.75));
+    border-radius: 16px;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  .building-level {
+    margin-top: 8px;
+    background: linear-gradient(135deg, $fcb-blue, $fcb-garnet);
+    border: 1px solid $fcb-gold;
+    color: $fcb-gold;
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  }
+}
+
+@keyframes float-building {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); } // Rango muy corto para que sea sutil
+  100% { transform: translateY(0px); }
+}
+
+// Animación de flotación del escudo
+@keyframes float-shield {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+// Animación de halo/brillo continuo
+@keyframes pulse-glow {
+  0% { transform: scale(0.95); opacity: 0.5; }
+  100% { transform: scale(1.2); opacity: 0.85; }
 }

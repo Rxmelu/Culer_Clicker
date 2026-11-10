@@ -1,0 +1,131 @@
+{
+    "items": [
+        {
+            "name": "Palanca Financiera",
+            "description": "Inyección económica. Te otorga un X2 de clicks durante 60 segundos.",
+            "price": 500,
+            "icon": "trending-up",
+            "tipo": "palanca"
+        },
+        {
+            "name": "Consejos de Lionel - Nivel 1",
+            "description": "Lionel te aconseja. Mejora tu técnica a 2 goles por clic.",
+            "price": 50,
+            "icon": "ribbon",
+            "tipo": "lionel",
+            "nivel": 1
+        },
+        {
+            "name": "Consejos de Lionel - Nivel 2",
+            "description": "Clases magistrales de regate. Sube a 3 goles por clic.",
+            "price": 120,
+            "icon": "ribbon",
+            "tipo": "lionel",
+            "nivel": 2
+        },
+        {
+            "name": "Consejos de Lionel - Nivel 3",
+            "description": "Sesión de faltas directas. Sube a 4 goles por clic.",
+            "price": 300,
+            "icon": "ribbon",
+            "tipo": "lionel",
+            "nivel": 3
+        },
+        {
+            "name": "Consejos de Lionel - Nivel 4",
+            "description": "Visión de juego estratosférica. Sube a 5 goles por clic.",
+            "price": 700,
+            "icon": "ribbon",
+            "tipo": "lionel",
+            "nivel": 4
+        },
+        {
+            "name": "Consejos de Lionel - Nivel 5",
+            "description": "Entrenamiento de Balón de Oro. Sube a 6 goles por clic.",
+            "price": 1500,
+            "icon": "ribbon",
+            "tipo": "lionel",
+            "nivel": 5
+        },
+        {
+            "name": "Consejos de Lionel - Nivel 6",
+            "description": "Estudiando jugadas legendarias. Sube a 7 goles por clic.",
+            "price": 3200,
+            "icon": "ribbon",
+            "tipo": "lionel",
+            "nivel": 6
+        },
+        {
+            "name": "Consejos de Lionel - Nivel 7",
+            "description": "Masterclass de definición. Sube a 8 goles por clic.",
+            "price": 7000,
+            "icon": "ribbon",
+            "tipo": "lionel",
+            "nivel": 7
+        },
+        {
+            "name": "Consejos de Lionel - Nivel 8",
+            "description": "Liderazgo en el campo absoluto. Sube a 9 goles por clic.",
+            "price": 15000,
+            "icon": "ribbon",
+            "tipo": "lionel",
+            "nivel": 8
+        },
+        {
+            "name": "Consejos de Lionel - Nivel 9",
+            "description": "El Legado del 10. Sube a 10 goles por clic.",
+            "price": 32000,
+            "icon": "ribbon",
+            "tipo": "lionel",
+            "nivel": 9
+        },
+        {
+            "name": "La Masía - Nivel 1",
+            "description": "La mejor cantera. Genera 15 clicks por segundo de manera automática.",
+            "price": 150,
+            "icon": "school",
+            "tipo": "masia",
+            "nivel": 1
+        },
+        {
+            "name": "La Masía - Nivel 2",
+            "description": "Mejora de instalaciones. Genera 30 clicks por segundo.",
+            "price": 600,
+            "icon": "school",
+            "tipo": "masia",
+            "nivel": 2
+        },
+        {
+            "name": "La Masía - Nivel 3",
+            "description": "Academia de élite mundial. Genera 45 clicks por segundo.",
+            "price": 2000,
+            "icon": "school",
+            "tipo": "masia",
+            "nivel": 3
+        },
+        {
+            "name": "Camp Nou - Nivel 1",
+            "description": "Estadio histórico. Aumenta la pasión culer.",
+            "price": 1000,
+            "icon": "trophy",
+            "tipo": "campnou",
+            "nivel": 1
+        },
+        {
+            "name": "Camp Nou - Nivel 2",
+            "description": "Estadio modernizado y ampliado.",
+            "price": 4000,
+            "icon": "trophy",
+            "tipo": "campnou",
+            "nivel": 2
+        },
+        {
+            "name": "Camp Nou - Nivel 3",
+            "description": "Spotify Camp Nou futurista de lujo.",
+            "price": 15000,
+            "icon": "trophy",
+            "tipo": "campnou",
+            "nivel": 3
+        }
+    ]
+}

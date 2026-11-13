@@ -1,21 +1,33 @@
 <ion-content [fullscreen]="true" class="fcb-clicker-bg">
 
+  @if (tiempoPalanca > 0) {
+    <div class="palanca-timer-badge">
+      <ion-icon name="trending-up"></ion-icon>
+      <span>X2 ACTIVO: {{ tiempoPalanca }}s</span>
+    </div>
+  }
+
+  @if (animandoDestruccion) {
+    <div class="destruccion-overlay">
+      <div class="shield-destroy-container">
+        <img src="assets/img/logoRMA.png" alt="Escudo Destruido" class="destruye-img" />
+        <div class="crack-effect"></div>
+        <h2 class="destruccion-title">¡REAL MADRID DESTRUIDO!</h2>
+      </div>
+    </div>
+  }
+
   <ion-grid class="main-grid">
     <ion-row>
-      <!-- Columna principal del clicker -->
       <ion-col size="12" class="main-col">
         
-        <!-- Título de la Aplicación -->
         <ion-row class="title-row">
           <ion-col size="12" class="ion-text-center">
             <h1 class="app-title">Culer Clicker</h1>
           </ion-col>
         </ion-row>
 
-        <!-- Header superior: Tienda y Contador compactos y centrados -->
         <ion-row class="header-row ion-align-items-center ion-justify-content-center">
-          
-          <!-- Botón de Tienda -->
           <div class="header-badge shop-badge" (click)="openShop()">
             <span class="badge-label">MEJORAS</span>
             <div class="badge-content">
@@ -23,44 +35,28 @@
             </div>
           </div>
           
-          <!-- Contador de Goles -->
           <div class="header-badge counter-badge">
             <span class="badge-label">GOLES</span>
             <div class="badge-content">
               <span class="counter-number">{{ contador | number }} ⚽</span>
             </div>
           </div>
-
         </ion-row>
 
-        <!-- Zona central: La Masía (Izda) - Escudo FCB (Centro) - Camp Nou (Dcha) -->
         <ion-row class="clicker-row ion-align-items-center ion-justify-content-center"> 
           
-          <!-- Columna Izquierda: La Masía -->
           <ion-col size="4" class="clicker-col image-container">
             @if (nivelMasia > 0) {
               <div class="building-wrapper masia-wrapper">
-                <img 
-                  [src]="getMasiaImagen()" 
-                  alt="La Masía"
-                  class="building-img"
-                />
+                <img [src]="getMasiaImagen()" alt="La Masía" class="building-img" />
                 <span class="building-level">Nivel {{ nivelMasia }}</span>
               </div>
             }
           </ion-col>
           
-          <!-- Columna Central: Escudo del FCB con soporte para textos flotantes -->
           <ion-col size="4" class="clicker-col image-container">
             <div class="shield-wrapper" (click)="ContadorClicks($event)">
-              <img 
-                id="col_imagen" 
-                src="assets/img/LogoFCB.png" 
-                alt="Escudo FC Barcelona"
-                class="shield-img"
-              />
-              
-              <!-- Textos flotantes dinámicos -->
+              <img id="col_imagen" src="assets/img/LogoFCB.png" alt="Escudo FC Barcelona" class="shield-img" />
               @for (ft of floatingTexts; track ft.id) {
                 <span class="floating-text" [style.top.px]="ft.top" [style.left.px]="ft.left">
                   {{ ft.value }}
@@ -69,15 +65,10 @@
             </div>
           </ion-col>
 
-          <!-- Columna Derecha: Camp Nou -->
           <ion-col size="4" class="clicker-col image-container">
             @if (nivelCampNou > 0) {
               <div class="building-wrapper campnou-wrapper">
-                <img 
-                  [src]="getCampNouImagen()" 
-                  alt="Camp Nou"
-                  class="building-img"
-                />
+                <img [src]="getCampNouImagen()" alt="Camp Nou" class="building-img" />
                 <span class="building-level">Nivel {{ nivelCampNou }}</span>
               </div>
             }

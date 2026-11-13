@@ -19,6 +19,7 @@ export interface Item {
   icon: string;
   tipo?: string;
   nivel?: number;
+  unico?: boolean;
 }
 
 @Component({
@@ -46,13 +47,14 @@ export class ShopComponent implements OnInit {
     const nivelMasiaActual = Number(localStorage.getItem('nivelMasia')) || 0;
     const nivelCampNouActual = Number(localStorage.getItem('nivelCampNou')) || 0;
     const nivelLionelActual = Number(localStorage.getItem('nivelLionel')) || 0;
+    const madridDestruido = localStorage.getItem('madridDestruido') === 'true';
 
-    console.log("Niveles leídos - Lionel:", nivelLionelActual, "Masía:", nivelMasiaActual, "CampNou:", nivelCampNouActual);
-
-    // Filtro robusto para las mejoras escalonadas
     this.items = itemsData.items.filter(item => {
-      // Si el item no tiene tipo definido, se muestra por defecto (ej. Palancas)
       if (!item.tipo) return true;
+
+      if (item.tipo === 'destruir_madrid') {
+        return !madridDestruido;
+      }
 
       if (item.tipo === 'lionel') {
         return item.nivel === (nivelLionelActual + 1);
@@ -66,8 +68,6 @@ export class ShopComponent implements OnInit {
       
       return true;
     });
-
-    console.log("Items filtrados para la tienda:", this.items);
   }
 
   buyItem(item: Item) {

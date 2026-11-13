@@ -2,10 +2,18 @@
     "items": [
         {
             "name": "Palanca Financiera",
-            "description": "Inyección económica. Te otorga un X2 de clicks durante 60 segundos.",
+            "description": "Inyección económica, Otorga un X2 a tus clicks durante de 60 segundos.",
             "price": 500,
             "icon": "trending-up",
             "tipo": "palanca"
+        },
+        {
+            "name": "Destruir al Real Madrid",
+            "description": "El definitivo por el que tanto has entrenado, destruye al eterno rival en mil pedazos. Solo puede ser comprado una vez.",
+            "price": 100000,
+            "icon": "alert",
+            "tipo": "destruir_madrid",
+            "unico": true
         },
         {
             "name": "Consejos de Lionel - Nivel 1",

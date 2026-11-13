@@ -1,17 +1,13 @@
-// Definición de variables de la paleta FCB
 $fcb-azul: #004D98;
 $fcb-grana: #A50044;
 $fcb-amarillo: #EDBB00;
 $fcb-azul-oscuro: #002b5c;
 
-// ==========================================
-// CONFIGURACIÓN GLOBAL DEL MODAL GRANDE EN IONIC
-// ==========================================
 ::ng-deep .fcb-shop-modal {
   --width: 90vw;
-  --max-width: 1100px; // Ventana mucho más ancha
+  --max-width: 1100px;
   --height: 85vh;
-  --max-height: 750px; // Ventana mucho más larga/alta
+  --max-height: 750px;
   --border-radius: 28px;
   --box-shadow: 0 25px 50px rgba(0, 0, 0, 0.85);
   overflow: hidden;
@@ -22,7 +18,6 @@ $fcb-azul-oscuro: #002b5c;
   --ion-background-color: transparent;
 }
 
-// Contenedor principal de la tienda
 .shop-grid-container {
   background: linear-gradient(135deg, rgba(0, 45, 95, 0.98), rgba(110, 0, 45, 0.98)), 
               url('../../../assets/img/fondoBlaugrana.jpg') no-repeat center center / cover;
@@ -35,7 +30,6 @@ $fcb-azul-oscuro: #002b5c;
   align-items: center;
   overflow-y: auto;
 
-  // Título centrado
   .title-container {
     text-align: center;
     width: 100%;
@@ -60,7 +54,6 @@ $fcb-azul-oscuro: #002b5c;
     }
   }
 
-  // Cuadrícula flexible para las tarjetas (organizadas y simétricas)
   .cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -71,7 +64,6 @@ $fcb-azul-oscuro: #002b5c;
     padding-bottom: 20px;
   }
 
-  // TARJETAS DE MEJORA: Proporcionadas (ni súper anchas ni súper alargadas)
   .shop-card {
     width: 100%;
     max-width: 260px;
@@ -90,7 +82,6 @@ $fcb-azul-oscuro: #002b5c;
     box-sizing: border-box;
     transition: transform 0.25s ease, border-color 0.25s ease;
 
-    // Icono
     .card-icon {
       margin-bottom: 10px;
 
@@ -101,7 +92,6 @@ $fcb-azul-oscuro: #002b5c;
       }
     }
 
-    // Información interna centrada y ordenada
     .card-info {
       flex-grow: 1;
       display: flex;
@@ -141,7 +131,6 @@ $fcb-azul-oscuro: #002b5c;
       }
     }
 
-    // Botón de compra abajo
     .card-action {
       width: 100%;
       margin-top: auto;
@@ -163,7 +152,6 @@ $fcb-azul-oscuro: #002b5c;
       }
     }
 
-    // Hover effect
     &:hover {
       transform: translateY(-5px);
       border-color: $fcb-amarillo;
